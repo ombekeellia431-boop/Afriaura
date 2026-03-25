@@ -3,88 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFRIAURA | Sovereign Tech Empire by Ellia</title>
+    <title>AFRIAURA | Sovereign AI Empire by Ellia</title>
+    <link rel="manifest" href="manifest.json">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Syne:wght@800&family=Poppins:wght@200;400;900&display=swap');
-        :root { --gold: #FFD700; --neon: #00FFFF; --pink: #FF007F; --deep: #010101; }
-        body { background: var(--deep); color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        :root { --gold: #FFD700; --neon: #00FFFF; --pink: #FF007F; --deep: #010101; --royal: #4169E1; }
+        body { background: var(--deep); color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
         .font-vision { font-family: 'Orbitron', sans-serif; }
         .font-afro { font-family: 'Syne', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(50px); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 40px; }
-        .gold-text { background: linear-gradient(90deg, #FFD700, #FFFACD, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-empire { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 35px; }
+        .gold-gradient { background: linear-gradient(90deg, #FFD700, #FFFACD, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Bouton Caméra IA Central 100% Fonctionnel */
+        /* Bouton Caméra IA Central (Le point de création 300+) */
         .camera-master {
-            width: 100px; height: 100px; background: linear-gradient(45deg, var(--pink), var(--gold), var(--neon));
-            border-radius: 50%; box-shadow: 0 0 60px rgba(255, 0, 127, 0.5);
+            width: 110px; height: 110px; background: linear-gradient(45deg, var(--pink), var(--gold), var(--neon));
+            border-radius: 50%; box-shadow: 0 0 70px rgba(255, 0, 127, 0.4);
             display: flex; align-items: center; justify-content: center; cursor: pointer;
-            border: 6px solid var(--deep); transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 100;
+            border: 8px solid var(--deep); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100; position: relative;
         }
-        .camera-master:active { transform: scale(0.8) rotate(90deg); }
-        
-        .page { display: none; padding-bottom: 200px; animation: powerIn 0.8s ease; }
-        .active { display: block; }
-        @keyframes powerIn { from { opacity: 0; transform: scale(0.95); filter: blur(10px); } to { opacity: 1; transform: scale(1); filter: blur(0); } }
+        .camera-master:hover { transform: scale(1.1) rotate(15deg); }
 
-        #terminal { font-family: 'Courier New', monospace; font-size: 11px; color: var(--neon); height: 280px; overflow-y: auto; background: rgba(0,0,0,0.9); padding: 20px; border-radius: 30px; border: 1px solid rgba(0, 255, 255, 0.1); }
-        .stat-card { transition: 0.3s; cursor: pointer; }
-        .stat-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .page { display: none; padding-bottom: 200px; animation: slideUp 0.6s ease-out; }
+        .active { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Terminal IA Chasseuse (Agents Travailleurs 24/24) */
+        #ia-terminal { font-family: 'Courier New', monospace; font-size: 11px; color: var(--neon); height: 250px; overflow-y: auto; background: rgba(0,0,0,0.9); padding: 20px; border-radius: 25px; border: 1px solid var(--neon); }
+        .badge-certified { background: var(--gold); color: black; font-size: 10px; font-weight: 900; padding: 2px 8px; border-radius: 5px; text-transform: uppercase; }
     </style>
 </head>
 <body onload="initEmpire()">
 
-    <header class="fixed top-0 w-full z-50 p-6">
-        <div class="max-w-7xl mx-auto glass p-5 flex justify-between items-center border-b border-gold/20">
-            <div class="flex items-center gap-4 cursor-pointer" onclick="show('home')">
-                <div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center font-black text-black text-2xl shadow-xl">A</div>
+    <header class="fixed top-0 w-full z-50 p-4">
+        <div class="max-w-7xl mx-auto glass-empire p-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="show('home')">
+                <div class="w-12 h-12 bg-gold rounded-xl flex items-center justify-center font-black text-black text-xl shadow-lg">A</div>
                 <div>
-                    <h1 class="font-vision gold-text text-3xl font-black uppercase tracking-tighter">AFRIAURA</h1>
-                    <p class="text-[8px] text-gray-500 font-bold uppercase tracking-widest">Imperial Hub | Ellia Flow</p>
+                    <h1 class="font-vision gold-gradient text-2xl font-black tracking-tighter">AFRIAURA</h1>
+                    <p class="text-[7px] text-gray-500 font-bold uppercase">Sovereign Empire by Ellia Flow</p>
                 </div>
             </div>
             <div class="text-right">
-                <div class="flex items-center gap-2 justify-end mb-1">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    <p class="text-[10px] font-black text-neon uppercase">AI Hunter Active</p>
-                </div>
-                <p class="text-xl font-black gold-text">+241 066036977</p>
+                <span class="badge-certified"><i class="fas fa-crown"></i> Elite Developer</span>
+                <p class="text-lg font-black gold-gradient">+241 066036977</p>
             </div>
         </div>
     </header>
 
-    <main class="pt-36 px-6 max-w-7xl mx-auto">
+    <main class="pt-32 px-4 max-w-7xl mx-auto">
 
         <section id="home" class="page active">
-            <div class="grid lg:grid-cols-4 gap-8">
-                <div class="lg:col-span-3 glass p-12 relative overflow-hidden h-[600px] border-l-8 border-gold">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                    <div class="relative z-20 h-full flex flex-col justify-end">
-                        <div class="bg-gold/20 text-gold px-4 py-1 rounded-full w-fit text-[10px] font-black mb-4">SOVEREIGN OWNER: ELLIA</div>
-                        <h2 class="font-afro text-6xl mb-6 gold-text uppercase leading-none">The Future <br> Of African Wealth</h2>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-8 max-w-2xl">
-                            "I am Ellia, 20-year-old developer from Libreville. Afriaura is the most audacious technology in the world. 
-                            While I study, my AI agents hunt for investors and clients 24/7. Your creativity is now a certified asset."
-                        </p>
-                        <div class="flex gap-6">
-                            <button onclick="buyViews()" class="px-12 py-5 bg-white text-black font-black uppercase text-xs rounded-2xl hover:bg-gold transition shadow-xl">Propulsion Boost</button>
-                            <div class="px-12 py-5 glass font-black uppercase text-xs rounded-2xl flex items-center gap-3">
-                                <i class="fas fa-language text-neon"></i> Universal Translation Active
-                            </div>
-                        </div>
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 glass-empire p-10 relative h-[500px] flex flex-col justify-end overflow-hidden border-l-4 border-gold">
+                    <div class="absolute top-0 right-0 p-10 opacity-10 text-9xl font-afro">GABON</div>
+                    <h2 class="font-afro text-5xl mb-4 gold-gradient uppercase">The 20-Year-Old <br> Gabonese Genius</h2>
+                    <p class="text-xs text-gray-400 mb-8 max-w-lg leading-relaxed">
+                        "I am Ellia. I built Afriaura to prove that African youth can lead the global tech market. My IA agents hunt for your success while I study. This is the fastest, most secure creation engine ever built."
+                    </p>
+                    <div class="flex gap-4">
+                        <button onclick="propulsion()" class="px-8 py-4 bg-white text-black font-black text-[10px] uppercase rounded-xl hover:bg-gold transition">Boost Popularity</button>
+                        <button class="px-8 py-4 glass-empire font-black text-[10px] uppercase rounded-xl">Translation: All Languages</button>
                     </div>
                 </div>
                 <div class="space-y-6">
-                    <div class="glass p-8 border-l-8 border-pink">
-                        <h4 class="font-vision text-[10px] text-pink mb-4 uppercase">Welcome Creator</h4>
-                        <p class="text-[11px] text-gray-400 italic">"Ellia Flow welcomes you. Your account is being certified for global sales."</p>
+                    <div class="glass-empire p-6">
+                        <h4 class="font-vision text-[9px] text-pink mb-4 uppercase">Imperial Reward Guide</h4>
+                        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl">
+                            <i class="fas fa-coins text-gold"></i>
+                            <p class="text-[10px]">Create Art -> Get Likes -> Withdraw Cash</p>
+                        </div>
                     </div>
-                    <div class="glass p-8">
-                        <h4 class="font-vision text-[10px] text-gold mb-6 uppercase">My Popularity</h4>
-                        <div class="space-y-6">
-                            <div><p class="text-[9px] text-gray-500 uppercase mb-2">Total Views</p><p id="view-counter" class="text-4xl font-black tracking-tighter">12,500</p></div>
-                            <div><p class="text-[9px] text-gray-500 uppercase mb-2">Empire Rank</p><p class="text-xl font-black text-neon">#1 GABON</p></div>
+                    <div class="glass-empire p-6">
+                        <h4 class="font-vision text-[9px] text-neon mb-4 uppercase">Popular Creator Badge</h4>
+                        <div id="popularity-card" class="text-center p-6 bg-black/40 rounded-3xl border border-gold/20">
+                            <p class="text-[9px] text-gray-500 uppercase">My Empire Views</p>
+                            <p id="view-count" class="text-4xl font-black text-white">45,201</p>
+                            <button onclick="buyViews()" class="mt-4 text-[8px] text-gold underline">Buy Views (Boost Content)</button>
                         </div>
                     </div>
                 </div>
@@ -92,87 +89,88 @@
         </section>
 
         <section id="market" class="page">
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="glass p-12 text-center border-t-8 border-gold">
-                    <h3 class="font-afro text-4xl mb-6 uppercase">Merchant Propulsion</h3>
-                    <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-10 italic">Your publications pushed to 1M+ users globally</p>
-                    <div class="text-7xl font-black gold-text mb-12">15,000 <span class="text-xl">FCFA</span></div>
-                    <button onclick="paySubscription()" class="w-full py-6 bg-gold text-black font-black rounded-3xl text-sm uppercase tracking-widest shadow-2xl">Subscribe Monthly</button>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-empire p-10 border-t-8 border-gold text-center">
+                    <h3 class="font-afro text-3xl mb-4 uppercase">Merchant Propulsion</h3>
+                    <p class="text-[9px] text-gray-500 uppercase mb-8">Monthly Subscription for Global Reach</p>
+                    <div class="text-6xl font-black gold-gradient mb-8">15,000 <span class="text-lg">FCFA</span></div>
+                    <ul class="text-left text-[10px] space-y-3 mb-8 text-gray-400">
+                        <li><i class="fas fa-check text-gold mr-2"></i> Access to the Great World Market</li>
+                        <li><i class="fas fa-check text-gold mr-2"></i> Auto-Promotion for Popular Lives</li>
+                        <li><i class="fas fa-check text-gold mr-2"></i> Investor Connect Certification</li>
+                    </ul>
+                    <button onclick="subscribe()" class="w-full py-5 bg-gold text-black font-black rounded-2xl text-[10px] uppercase shadow-lg">Activate Seller Account</button>
                 </div>
-                <div class="glass p-12">
-                    <h3 class="font-vision text-xl mb-12 uppercase">Financial Statistics</h3>
-                    <div class="grid grid-cols-2 gap-6 mb-12">
-                        <div class="p-6 bg-white/5 rounded-3xl text-center border border-white/5"><p class="text-[10px] text-gray-500 uppercase">Week</p><p class="text-2xl font-black text-neon">+85k</p></div>
-                        <div class="p-6 bg-white/5 rounded-3xl text-center border border-white/5"><p class="text-[10px] text-gray-500 uppercase">Year</p><p class="text-2xl font-black text-neon">+4.2M</p></div>
+                <div class="glass-empire p-10">
+                    <h3 class="font-vision text-sm mb-8 uppercase tracking-widest">Financial Mastery Stats</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5"><p class="text-[8px] text-gray-500 uppercase">Week</p><p class="text-xl font-black text-neon">+124k</p></div>
+                        <div class="p-5 bg-white/5 rounded-2xl border border-white/5"><p class="text-[8px] text-gray-500 uppercase">Month</p><p class="text-xl font-black text-neon">+1.8M</p></div>
                     </div>
-                    <div class="p-10 bg-black rounded-[40px] text-center border-2 border-gold/20">
-                        <p class="text-[10px] text-gray-500 mb-2 uppercase">Airtel / Moov Money Wallet</p>
-                        <p id="wallet-balance" class="text-5xl font-black gold-text">154,300 FCFA</p>
+                    <div class="p-8 bg-black rounded-3xl border-2 border-gold/20 text-center">
+                        <p class="text-[8px] text-gray-500 mb-2 uppercase">Airtel / Moov Money Empire Wallet</p>
+                        <p id="wallet" class="text-4xl font-black gold-gradient">154,300 FCFA</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="hunter" class="page">
-            <div class="glass p-12 relative overflow-hidden">
-                <div class="flex justify-between items-center mb-10">
-                    <h2 class="font-vision text-3xl text-neon uppercase">Hunting Agents v5.0</h2>
-                    <p class="text-[10px] font-black bg-neon/10 text-neon px-5 py-2 rounded-full uppercase">Fast & Audacious Mode</p>
+            <div class="glass-empire p-10 relative overflow-hidden">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="font-vision text-2xl text-neon uppercase">IA Agents: Elite Hunters</h2>
+                    <span class="animate-pulse text-[9px] text-green-500 font-black uppercase">Operation: Fast & Audacious</span>
                 </div>
-                <div id="terminal"></div>
-                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="glass p-8 text-center"><i class="fas fa-search-dollar text-2xl text-gold mb-3"></i><p class="text-[8px] font-black uppercase">Client Hunter</p></div>
-                    <div class="glass p-8 text-center"><i class="fas fa-handshake text-2xl text-neon mb-3"></i><p class="text-[8px] font-black uppercase">Investor Match</p></div>
-                    <div class="glass p-8 text-center"><i class="fas fa-shield-check text-2xl text-green-500 mb-3"></i><p class="text-[8px] font-black uppercase">Quantum Security</p></div>
-                    <div class="glass p-8 text-center"><i class="fas fa-robot text-2xl text-pink mb-3"></i><p class="text-[8px] font-black uppercase">24/7 Agents</p></div>
+                <div id="ia-terminal"></div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                    <div class="p-6 glass-empire text-center"><i class="fas fa-search-dollar text-xl text-gold mb-2"></i><p class="text-[8px] font-black uppercase">Client Hunter</p></div>
+                    <div class="p-6 glass-empire text-center"><i class="fas fa-users-viewfinder text-xl text-neon mb-2"></i><p class="text-[8px] font-black uppercase">Investor Match</p></div>
+                    <div class="p-6 glass-empire text-center"><i class="fas fa-shield-alt text-xl text-green-500 mb-2"></i><p class="text-[8px] font-black uppercase">Quantum Security</p></div>
+                    <div class="p-6 glass-empire text-center"><i class="fas fa-globe text-xl text-pink mb-2"></i><p class="text-[8px] font-black uppercase">Auto-Translation</p></div>
                 </div>
             </div>
         </section>
 
         <section id="contest" class="page">
-            <div class="grid lg:grid-cols-3 gap-10">
-                <div class="lg:col-span-2 glass p-10">
-                    <h2 class="font-afro text-4xl gold-text uppercase mb-10">National Wealth Cup</h2>
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 glass-empire p-10">
+                    <h2 class="font-afro text-3xl gold-gradient uppercase mb-8">National Wealth Contest</h2>
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between p-6 bg-gold/10 border border-gold/30 rounded-[40px]">
-                            <div class="flex items-center gap-8">
-                                <span class="text-3xl font-black">01</span>
-                                <img src="https://flagcdn.com/ga.svg" width="50" class="rounded">
-                                <div><p class="font-black text-xl">GABON</p><p class="text-[8px] text-gold font-black uppercase">Ellia's Empire Leader</p></div>
+                        <div class="flex items-center justify-between p-6 bg-gold/10 border border-gold/30 rounded-3xl">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-black">01</span>
+                                <img src="https://flagcdn.com/ga.svg" width="40" class="rounded shadow">
+                                <div><p class="font-black">GABON</p><p class="text-[7px] text-gold uppercase">Leader: Ellia Empire</p></div>
                             </div>
-                            <p class="text-2xl font-black text-neon">+8.9M Votes</p>
-                        </div>
-                        <div class="flex items-center justify-between p-6 bg-white/5 rounded-[40px] opacity-40">
-                            <div class="flex items-center gap-8"><span class="text-xl font-black">02</span><img src="https://flagcdn.com/ng.svg" width="50" class="rounded opacity-50"><div><p class="font-black">NIGERIA</p></div></div>
-                            <p class="font-black">5.4M Votes</p>
+                            <p class="text-xl font-black text-neon">+12.4M Votes</p>
                         </div>
                     </div>
                 </div>
-                <div class="glass p-10 text-center border-4 border-pink flex flex-col items-center justify-center">
-                    <i class="fas fa-trophy text-7xl text-gold mb-8 animate-bounce"></i>
-                    <h3 class="font-vision text-sm mb-2 uppercase">Afriaura Trophy</h3>
-                    <p class="text-[9px] text-gray-500 mb-8 italic">Engraved for the champion:</p>
-                    <div class="w-full py-5 bg-black border-2 border-gold/30 rounded-2xl font-black text-gold text-xl uppercase tracking-widest mb-8 shadow-inner">ELLIA FLOW</div>
-                    <button onclick="alert('Inscription réussie pour le trophée')" class="w-full py-5 bg-pink text-white font-black rounded-3xl text-[10px] uppercase shadow-2xl">Claim Cash Rewards</button>
+                <div class="glass-empire p-10 border-4 border-pink text-center flex flex-col items-center justify-center">
+                    <i class="fas fa-trophy text-6xl text-gold mb-6 animate-bounce"></i>
+                    <h4 class="font-vision text-[10px] mb-4 uppercase">Sovereign Trophy</h4>
+                    <div class="w-full py-4 bg-black border border-gold/40 rounded-xl font-black text-gold text-lg uppercase tracking-widest mb-6">ELLIA FLOW</div>
+                    <p class="text-[9px] text-gray-500 italic mb-6">Your name will be engraved with the app name and cash reward.</p>
+                    <button class="w-full py-4 bg-pink text-white font-black rounded-xl text-[9px] uppercase shadow-lg">Start Competition</button>
                 </div>
             </div>
         </section>
 
         <section id="rules" class="page">
-            <div class="glass p-12">
-                <h2 class="font-vision text-3xl gold-text mb-10 uppercase">Security & Guide</h2>
-                <div class="grid md:grid-cols-2 gap-12 text-[10px] text-gray-400 leading-relaxed">
+            <div class="glass-empire p-10">
+                <h2 class="font-vision text-2xl gold-gradient mb-8 uppercase">Policy & Guide</h2>
+                <div class="grid md:grid-cols-2 gap-10 text-[9px] text-gray-400 leading-relaxed text-justify">
                     <div>
-                        <h4 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">Quantum Privacy</h4>
-                        <p class="mb-6">Afriaura is the safest app globally. Ellia Flow has designed a sovereign encryption where no foreign entity can touch your data or your money.</p>
-                        <h4 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">Creator Rewards</h4>
-                        <p>Popular creators and lives are pushed automatically. Buy views if your content needs an initial kick to reach the global market.</p>
+                        <h5 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">1. The Ellia-Secured Protocol</h5>
+                        <p class="mb-6">Afriaura is the most secure application ever built. Your data and money are protected by sovereign encryption. No foreign entity has access to your digital empire.</p>
+                        <h5 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">2. IA Agent Conduct</h5>
+                        <p>Our AI Agents search 24/7. When a client or investor is found, your contact 066036977 is shared instantly to secure the deal.</p>
                     </div>
                     <div>
-                        <h4 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">AIA Hunting Rules</h4>
-                        <p class="mb-6">The IA Agents hunt investors 24/7. When a match is found, your contact 066036977 or your profile is sent instantly for rapid business.</p>
-                        <h4 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">Art Game Monetization</h4>
-                        <p>Create art, receive likes, get paid. Afriaura values the spirit of inventors and turns creativity into FCFA.</p>
+                        <h5 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">3. Rewards & Monetization</h5>
+                        <p class="mb-6">Winning contests gives you cash and trophies. Accounts for sellers provide propulsion to push your items to every screen on the planet.</p>
+                        <h5 class="text-white font-black uppercase mb-4 tracking-widest border-b border-gold/20 pb-2">4. Personalized Creation</h5>
+                        <p>Creation in Duo or group (Art, Music, Business) is automatically certified. You share the profits without fear.</p>
                     </div>
                 </div>
             </div>
@@ -180,22 +178,22 @@
 
     </main>
 
-    <footer class="fixed bottom-10 left-1/2 -translate-x-1/2 w-[95%] max-w-xl glass p-5 flex justify-around items-center border-2 border-gold/30 shadow-2xl z-50">
-        <button onclick="show('home')" class="flex flex-col items-center gap-2 text-gray-500 hover:text-white transition"><i class="fas fa-fire text-xl"></i><span class="text-[7px] font-black uppercase tracking-widest">Empire</span></button>
-        <button onclick="show('market')" class="flex flex-col items-center gap-2 text-gray-500 hover:text-gold transition"><i class="fas fa-store text-xl"></i><span class="text-[7px] font-black uppercase tracking-widest">Market</span></button>
+    <footer class="fixed bottom-8 left-1/2 -translate-x-1/2 w-[95%] max-w-lg glass-empire p-4 flex justify-around items-center border-2 border-gold/30 shadow-2xl z-50">
+        <button onclick="show('home')" class="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition"><i class="fas fa-home text-lg"></i><span class="text-[6px] font-black uppercase">Empire</span></button>
+        <button onclick="show('market')" class="flex flex-col items-center gap-1 text-gray-500 hover:text-gold transition"><i class="fas fa-shopping-cart text-lg"></i><span class="text-[6px] font-black uppercase">Market</span></button>
         
-        <div onclick="iaCapture()" class="camera-master -mt-20">
+        <div onclick="openStudio()" class="camera-master -mt-20">
             <i class="fas fa-camera text-white text-4xl"></i>
         </div>
 
-        <button onclick="show('hunter')" class="flex flex-col items-center gap-2 text-gray-500 hover:text-neon transition"><i class="fas fa-robot text-xl"></i><span class="text-[7px] font-black uppercase tracking-widest">Hunter</span></button>
-        <button onclick="show('contest')" class="flex flex-col items-center gap-2 text-gray-500 hover:text-pink transition"><i class="fas fa-trophy text-xl"></i><span class="text-[7px] font-black uppercase tracking-widest">Contest</span></button>
-        <button onclick="show('rules')" class="flex flex-col items-center gap-2 text-gray-500 hover:text-white transition"><i class="fas fa-shield-alt text-xl"></i><span class="text-[7px] font-black uppercase tracking-widest">Guide</span></button>
+        <button onclick="show('hunter')" class="flex flex-col items-center gap-1 text-gray-500 hover:text-neon transition"><i class="fas fa-brain text-lg"></i><span class="text-[6px] font-black uppercase">Hunter</span></button>
+        <button onclick="show('contest')" class="flex flex-col items-center gap-1 text-gray-500 hover:text-pink transition"><i class="fas fa-medal text-lg"></i><span class="text-[6px] font-black uppercase">Contest</span></button>
+        <button onclick="show('rules')" class="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition"><i class="fas fa-shield-alt text-lg"></i><span class="text-[6px] font-black uppercase">Guide</span></button>
     </footer>
 
     <script>
-        let views = 12500;
-        let balance = 154300;
+        let views = 45201;
+        let wallet = 154300;
 
         function show(id) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -204,44 +202,46 @@
         }
 
         function buyViews() {
-            views += 1000;
-            document.getElementById('view-counter').innerText = views.toLocaleString();
-            alert("PROPULSION ACTIVE: +1,000 Vues ajoutées à votre Empire !");
+            views += 5000;
+            document.getElementById('view-count').innerText = views.toLocaleString();
+            alert("PROPULSION IA: +5,000 Vues injectées dans votre contenu !");
         }
 
-        function paySubscription() {
-            if(balance >= 15000) {
-                balance -= 15000;
-                document.getElementById('wallet-balance').innerText = balance.toLocaleString() + " FCFA";
-                alert("ABONNEMENT RÉUSSI: Votre compte est maintenant propulsé mondialement !");
-            } else {
-                alert("Solde insuffisant.");
-            }
+        function subscribe() {
+            if(wallet >= 15000) {
+                wallet -= 15000;
+                document.getElementById('wallet').innerText = wallet.toLocaleString() + " FCFA";
+                alert("SUCCÈS: Compte Vendeur Propulsé ! Vos produits sont maintenant mondiaux.");
+            } else { alert("Solde insuffisant."); }
         }
 
-        function iaCapture() {
-            alert("IA STUDIO ACTIVÉ: Création de contenu Duo & Vidéo 12K en cours...");
+        function openStudio() {
+            alert("STUDIO IA ACTIVÉ: Création Vidéo/Photo/Musique à plusieurs... Traitement 12K en cours pour Ellia Empire.");
         }
 
         function initEmpire() {
-            const term = document.getElementById('terminal');
+            const term = document.getElementById('ia-terminal');
             const msgs = [
-                "[IA] Agent #066036977 deployed on LinkedIn Global...",
-                "[INFO] Founder: Ellia Flow | Status: Sovereign 100%",
-                "[SUCCESS] Lead found in Paris for 'Gabonese Luxury Art'",
-                "[TRADUCTION] Message from China translated: 'Nous voulons investir'",
-                "[BOOST] Video propulsion active for Creator ID: #992",
-                "[IA] Hunting investors in Dubai real-time...",
-                "[STATS] Monthly ROI for Sellers: +420k detected",
-                "[INFO] Contest Update: GABON remains #1 World Rank",
-                "[SUCCESS] Agent #03 found high-value buyer in New York"
+                "[IA] Agent #066036977 scanning Global Networks...",
+                "[SUCCESS] Investor found in Dubai for Gabonese Art.",
+                "[TRADUCTION] Message from China: 'We want 1000 units' -> Translated.",
+                "[IA] Hunting for clients on TikTok/Instagram 24/7...",
+                "[STATS] Monthly ROI for Merchant 402: +1.2M FCFA.",
+                "[INFO] Duo-Business contract created for Ellia & Naomi.",
+                "[SUCCESS] Agent #02 secured meeting with Global Brand.",
+                "[INFO] World Cup: GABON total wealth rank #1.",
+                "[SECURITY] Quantum Shield active. Your history is safe."
             ];
             setInterval(() => {
                 const m = msgs[Math.floor(Math.random()*msgs.length)];
                 term.innerHTML += `<div>> [${new Date().toLocaleTimeString()}] ${m}</div>`;
                 term.scrollTop = term.scrollHeight;
-            }, 2500);
-            console.log("AFRIAURA LOADED. Empire Status: Operational.");
+            }, 2000);
+
+            // SERVICE WORKER REGISTRATION (POUR INSTALLATION)
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').then(() => console.log("Empire Service Worker Active."));
+            }
         }
     </script>
 </body>

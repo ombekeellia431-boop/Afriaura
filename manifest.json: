@@ -1,0 +1,21 @@
+{
+  "short_name": "Afriaura",
+  "name": "Afriaura: The Sovereign Empire",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192.png?text=A",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512.png?text=Afriaura",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#010101",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FFD700"
+}
